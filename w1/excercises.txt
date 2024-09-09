@@ -1,0 +1,55 @@
+1)creating and manupulating directories
+
+create a directory in the working directory "~" called 'programs'
+-mkdir programms
+
+create 2 directories in the directory in programs directory called "homework1" and "homework2"
+-mkdir programms/homework1 programs/homework2
+
+create 1 directory in "homework2" directory called "subhomeworkA"
+-mkdir programs/homework2/subhomeworkA
+
+rename the previously created directory to "homework2-subhomeworkA"
+-mv programs/homework2/subhomeworkA programs/homework2/homework2-subhomeworkA
+
+2)creating and manipulating files
+
+create 3 files in the directory "~/programs" called "program1.c" "program2.c" "program2.h"
+-touch ~/programs/program1.c ~/programs/program2.c ~/programs/program2.h
+
+create 2 files in the "~/programs/homework1" directory called "homework1-2.c" "homework1-1.c"
+-touch ~/programs/homework1/homework1-1.c ~/programs/homework1/homework1-1.c
+
+create 2 files with the name subhomeworkA1.c and subhomeworkA2.cpp in the ~/programs/homework2/homework2-subhomeworkA directory
+-touch ~/programs/homework2/homework2-subhomeworkA/subhomeworkA1.c ~/programs/homework2/homework2-subhomeworkA/subhomeworkA2.cpp
+
+create 2 aliases in the directory ~/programs/homework2/homework2-subhomeworkA such that
+    -homework2-subhomeworkA1.c is a normal link of subhomeworkA1.c
+    -homework2-subhomeworkA2.cpp is a symbolic link of subhomeworkA2.cpp
+-ln ~/programs/homework2/homework2-subhomeworkA/subhomeworkA1.c ~/programs/homework2/homework2-subhomeworkA/homework2-subhomeworkA1.c -s ~/programs/homework2/homework2-subhomeworkA/subhomeworkA2.c ~/programs/homework2/homework2-subhomeworkA/homework2-subhomeworkA2.c
+
+copy the ~/programs/homework1/homework1-1.c file to the ~/programs/homework2 directory with the name homework2-1.c
+-cp ~/programs/homework1/homework1-1.c ~/programs/homework2/homework2-1.c
+
+move the ~/programs/homework1/homework1-2.c file to the ~/programs/homework2 directory with the name homework2-2.c
+-mv ~/programs/homework1/homework1-2.c ~/programs/homework2/homework2-2.c
+
+delete one of the following files: subhomeworkA1.c or homework2-subhomeworkA1.c
+-rm ~/programs/homework2/homework2-subhomeworkA/subhomeworkA1.c
+or
+-rm ~/programs/homework2/homework2-subhomeworkA/homework2-subhomeworkA1.c
+
+3) About cut
+
+write a command that only displays the GID of every user
+-cut -d: -f4 /etc/passwd
+
+4) About grep
+
+write a command that displays only users from the 
+-grep :0: /etc/groups
+
+5) About stat
+
+write a command that shows how many aliases has a given file file
+-stat -c "%h" ~/programs/homework2/homework2-subhomeworkA/subhomeworkA2.c

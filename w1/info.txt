@@ -1,0 +1,36 @@
+COMMANDS USED IN SOLVING THIS WEEK'S EXCERCISES:
+
+mkdir - creates a directory
+mkdir -op <name1> <name2>...
+
+touch - creates a file. If it exists, it modifies the birth date
+touch -op <name1> <name2>...
+
+mv - moves a given file to a given destination (it is also used to rename a file or directory)
+mv -op <source> <destination>
+
+cp - copy a file from a given source to a given destination
+cp -op <source> <destination>
+
+ln - creates a link to a given file and outputs it on a given destination (Normal links don't need specifications. For symbolic lists add -s parameter)
+ln -op <source> <destination>
+
+rm - removes a file. To remove a directory with files inside, use rm -r command. (DON'T WRITE: rm -rf /!! IT LITERALLY DELETS YOUR SYSTEM)
+rm -op <name>
+
+cut - outputs a given file, and modifies how you wanted to make it output
+cut -op <name>
+
+grep - displays only the lines that contains a given pattern to a file
+grep -op <name>
+
+stat - outputs informations regarding a file: Size, Blocks, filetype, access, owner, group that bellongs, etc
+stat -op <name>
+
+SOME THINGS YOU SHOULD KNOW:
+
+Where are the users of the system stored: /etc/passwd 
+username:x:UID:GID:home dir:default shell:
+
+Where are the groups of the system: /etc/group
+groupname:GID:member users of that said group:

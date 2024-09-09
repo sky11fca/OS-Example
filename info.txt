@@ -1,0 +1,26 @@
+Commands it's better to know about:
+
+pwd - prints your current working directory
+cd - changes your current working directory
+id - outputs informations about your username
+cat - outputs contents of a file
+sudo - executes a command as the super user (make sure your username belongs to the wheel group)
+su - substitutes a session to another user (not specifying any user defaults to the root user)
+
+To install programs:
+
+On Debian-based distro (which is most of you that are using it):
+apt install "foo"
+
+On Fedora or RHEL based distro:
+dnf install "foo"
+yum install "foo"
+
+On Arch:
+pacman -S "foo"
+
+On openSUSE:
+zypper install "foo"
+
+On Void:
+xbps-install -S "foo"
