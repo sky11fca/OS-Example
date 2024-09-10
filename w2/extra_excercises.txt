@@ -1,0 +1,42 @@
+TL;DR: From now on, the excersises from course will split into ones that 
+you get parks for that day's activity, and extra ones.
+
+The extra batch of excersises is usually put there to get bonus points
+
+If you don't get the minimum points to pass this course, you don't
+get the points.
+
+I reccomend doing these type of excercises because these have the
+unfortunate luck to appear in midterms and session exams.
+
+1)find 5
+Write a command that displays every file and directory, as well as the execution
+rights of it, and only the ones which the group has the read and execution rights
+-find ~ -type f,d -perm -g=rx -printf "%h/%f %M\n"
+
+2)find 6
+Write a command that displays C/C++ files (ones that end in .c .cpp .h)
+and display the last modified date and their dimensions (in octal)
+-find ~ -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" \) -printf "%h/%f -> %m\n"
+
+
+3)find 7
+Write a command that finds the C++ files (.cpp) from the home directory
+and compiles the one that have their size <5Kb. Any error will be redirected
+to a file named errors.txt
+-find ~ -type f -name "*cpp" -size -5k -exec g++ {} -o {}_compiled \; 2> error.txt
+
+4)find 8
+Write a command that finds web related files (.html .htm .php .css) 
+and display the size in Kb and last modified date
+-find ~ -type f \( -name "*.hml" -or -name "*.html" -or -name "*.php" -or -name "*.css" \) -printf "%h/%f -> %kKb -> %t\n"
+
+5)find 9
+Write a command that finds temporary files (~ .bak) and deletes them from 
+the home directory
+-find ~ -type f \( -name "*~" -or -name "*.bak" \) -delete
+
+6)find 10
+Write a command that shows only the hard links, displayed by the name of said link.
+-find ~ -type l -exec ls -l {} \; 
+(I'm litterally not sure what this excercise wants)

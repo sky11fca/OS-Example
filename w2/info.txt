@@ -1,0 +1,71 @@
+Commands used in these excercises:
+
+sort - displays the contents of a file in a sorted manner
+find - finds something from a specified directory.
+
+Something that you need to know:
+
+parameters used in sort:
+
+-t: specifies a delimiter
+-n: sortes lines of a file numerically (by default, it sorts lexico-gramatically)
+-r: sorting in descending order
+-k: specify the row you want to sort.
+
+parameters used in find:
+
+-type: specify the file type you want to find.
+Example:
+    f - normal file
+    d - directory
+    l - links
+
+-used: specify the range of last accessed file in days.
+-perm: specify the access rights (more on that later)
+-printf: customize the console output of executing the command (in a simmilar manner as the printf function in C):
+    -%h - displays the directory the file belongs
+    -%f - displays the file name
+    -%t - displays the last modified date 
+    -%M - displays the file permissions (the -rwxrwxrwx format)
+    -%k - displays the size in Kb
+    -%m - displays the file permissions (octal format)
+-name: specify the pattern of a file
+-o/or: the "or" logical operator. Used to find multiple files with different patterns
+-size: find the files that have a specified file size:
+    - less than
+    + greater than
+-exec: executes a command based on what find command found:
+    {} - the placeholder name of the file.
+    \, ; - I have no idea what it does, but you have to put them at the end to work properly
+-delete: deletes every instance the command find found
+
+of course, these are only a fraction of many possible uses of the find command. Refer to the
+usage of this command to "man find"
+
+About file permissions:
+
+a file or directory has some internal data that specifies who is allowed to acces it.
+
+It is usually displayed as a string:
+
+   u   g   o
+- rwx rwx rwx, where:
+    r - read access
+    w - write access
+    x - execution access
+and it is separated in 3 segments all representing:
+    owner of the file rights - u
+    group that the file can acces it - g
+    everybody else - o
+
+or octal:
+ ugo
+0777 where:
+
+    1 = x
+    2 = w
+    4 = r
+
+specific commands regarding the file's ownership:
+    chmod - changes the file permissions (in a string format or octal)
+    chown - changes the owner of the file

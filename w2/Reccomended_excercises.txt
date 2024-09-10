@@ -1,0 +1,17 @@
+1) Sort 3
+
+Write a command that sorts in descending order every user from /etc/passwd by GID
+-sort -t: -nrk4 /etc/passwd
+
+2) Find 3
+
+Write a command that displays all the normal type files that were last modified last week.
+Alongside the last date modified and writing access
+-find ~ -type f -used -6 -printf "%h/%f  %M  %t\n" (replace the tilda with another directory)
+
+3) Find 3
+
+Write a command that displays the files from a given directory, in a recursively manner, that the owner 
+has the rights to execute, 
+Alongside the last date modified and the size in Kb
+-find ~ -type f -perm -u=x -printf "%h/%f -> %t -> %kKb\n"
